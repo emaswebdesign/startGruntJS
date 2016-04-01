@@ -14,21 +14,21 @@ module.exports = function(grunt) {
       }
     },
     jasmine: {
-    pivotal: {
-      src: 'src/scripts/*.js',
-      options: {
-        specs: 'spec/*Spec.js',
-        helpers: 'spec/*Helper.js'
+      pivotal: {
+        src: 'src/scripts/*.js',
+        options: {
+          specs: 'spec/*Spec.js',
+          helpers: 'spec/*Helper.js'
+        }
       }
-    }
-  },
+    },
     uglify: {
-    my_target: {
-      files: {
-        'build/script.min.js': ['src/scripts/script1.js', 'src/scripts/script2.js']
+      my_target: {
+        files: {
+          'build/script.min.js': ['src/scripts/script1.js', 'src/scripts/script2.js']
+        }
       }
-    }
-  },
+    },
     sass: {                
       dist: {                
         options: {               
