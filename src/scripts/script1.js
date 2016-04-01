@@ -1,1 +1,3 @@
-document.getElementsByTagName("p")[0].innerHTML = "Jedziesz ziom ...";
+var helloWorld = function(){
+	return "Hello World";
+};

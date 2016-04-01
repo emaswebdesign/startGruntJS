@@ -3,6 +3,15 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    jasmine: {
+    pivotal: {
+      src: 'src/scripts/*.js',
+      options: {
+        specs: 'spec/*Spec.js',
+        helpers: 'spec/*Helper.js'
+      }
+    }
+  },
     uglify: {
     my_target: {
       files: {
@@ -13,8 +22,7 @@ module.exports = function(grunt) {
     sass: {                
       dist: {                
         options: {               
-          style: 'expanded',
-          sourcemap: 'none'
+          style: 'expanded'
         },
         files: {               
           'build/main.css': 'src/sass/main.scss'
@@ -23,11 +31,12 @@ module.exports = function(grunt) {
     }
   });
 
-  // Load the plugin that provides the "uglify" task.
+
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-jasmine');
 
-  // Default task(s).
   grunt.registerTask('default', ['uglify', 'sass']);
+  grunt.registerTask('test', ['jasmine']);
 
 };
